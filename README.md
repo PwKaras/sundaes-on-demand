@@ -1,3 +1,15 @@
+docs for react-testing-library
+https://testing-library.com/docs/ecosystem-user-event
+
+query
+https://testing-library.com/docs/queries/about/
+
+quick reference for react
+https://testing-library.com/docs/react-testing-library/cheatsheet/
+
+which method use
+https://testing-library.com/docs/queries/about/#priority
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
