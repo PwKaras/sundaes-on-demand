@@ -3,22 +3,28 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import { useEffect, useState } from 'react';
 import { ScoopOptions } from './ScoopOption';
-import { ToopingsOptions } from './ToopingsOptions';
+import { ToppingsOptions } from './ToppingsOptions';
+import { AlertBanner } from '../common/AlertBanner';
 
 export const Options = ( props ) => {
     const { optionType } = props;
-    const [items, setItems] = useState([]);
+    const [ items, setItems ] = useState([]);
+    const [ error, setError ] = useState(false);
 
     // optionType is 'scoops' or 'toopings'
     useEffect(() => {
         axios.get(`http:localhost:3030/${optionType}`)
             .then(response => setItems(response.data))
             .catch(err => {
-                // TODO: handle error response
+                setError(true);
             })
     }, [optionType]);
 
-    const ItemComponent = optionType === 'scoops' ? ScoopOptions : ToopingsOptions;
+    if(error) {
+        return <AlertBanner />
+    }
+
+    const ItemComponent = optionType === 'scoops' ? ScoopOptions : ToppingsOptions;
 
     const optionItems = items.map(item =>
         <ItemComponent
