@@ -26,7 +26,7 @@ test("popover responds to hover", async () => {
     // popover appears upon mousever of checkbox label
     const termsAndConditions = screen.queryByText(/terms and conditions/i);
     userEvent.hover(termsAndConditions);
-
+    
     const popover = screen.getByText(/no ice cream will actually be delivered/i);
     expect(popover).toBeInTheDocument();
 
