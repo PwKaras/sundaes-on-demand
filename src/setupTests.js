@@ -5,7 +5,8 @@
 import '@testing-library/jest-dom';
 // https://mswjs.io/docs/getting-started/integrate/node
 
-import { server } from './mocks/server.js'
+import { server } from './mock/server';
+// import { server } from './mocks/server.js';
 // Establish API mocking before all tests.
 beforeAll(() => server.listen())
 

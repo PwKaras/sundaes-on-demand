@@ -1,4 +1,4 @@
-import { setupServer } from'msw/node';
+import { setupServer } from 'msw/node';
 import { handlers } from './handlers';
 
 // https://mswjs.io/docs/getting-started/integrate/node
