@@ -3,7 +3,7 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import { useEffect, useState } from 'react';
 import { ScoopOptions } from './ScoopOption';
-import { ToopingsOptions } from './ToopingsOptions';
+import { ToppingsOptions } from './ToppingsOptions';
 
 export const Options = ( props ) => {
     const { optionType } = props;
@@ -18,7 +18,7 @@ export const Options = ( props ) => {
             })
     }, [optionType]);
 
-    const ItemComponent = optionType === 'scoops' ? ScoopOptions : ToopingsOptions;
+    const ItemComponent = optionType === 'scoops' ? ScoopOptions : ToppingsOptions;
 
     const optionItems = items.map(item =>
         <ItemComponent
