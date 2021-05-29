@@ -6,7 +6,7 @@ test('displays image for each scoop option from server', async () => {
     render( <Options  optionType="scoops"/>);
 
     // find images
-    // anytimes when waiting for something appear assynchronously use findBy.. (insted getBy... ) and make it with asyn await
+    // anytimes when waiting for something appear asynchronously use findBy.. (insted getBy... ) and make it with asyn await
     const scoopImages = await screen.findAllByRole('img', {name: /scoop$/i});
     expect(scoopImages).toHaveLength(2);
 
