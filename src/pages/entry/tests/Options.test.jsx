@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
+// import { render, screen } from '@testing-library/react';
+import { screen, render } from  '../../../test-utils/testing-library-utils';
+// import { OrderDetailsProvider } from '../../../contexts/OrderDetails';
 
 import { Options } from '../Options';
 
 test('displays image for each scoop option from server', async () => {
+    // render( <Options  optionType="scoops" />, { wrapper: OrderDetailsProvider });
     render( <Options  optionType="scoops" />);
 
     // find images
@@ -16,6 +19,9 @@ test('displays image for each scoop option from server', async () => {
 });
 
 test('displays image for each topping option form server', async () => {
+    // render(<Options optionType="toppings" />, { wrapper: OrderDetailsProvider });
+    // abowe use pure render from '@testing-library/react', have to use { wrapper: ... } as a second argument
+    // belowe use render overwrite in test-utils/testing-library-utils.jsx, that contains build in wrapper: context
     render(<Options optionType="toppings" />);
 
     const toppingImages = await screen.findAllByRole('img', {name: /topping$/i});
