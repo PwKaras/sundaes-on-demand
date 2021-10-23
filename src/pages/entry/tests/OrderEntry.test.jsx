@@ -1,7 +1,9 @@
-import { screen, render, waitFor } from '@testing-library/react';
+// import { screen, render, waitFor } from '@testing-library/react';
+import { screen, render, waitFor } from  '../../../test-utils/testing-library-utils';
 import { OrderEntry } from '../OrderEntry';
 import { response, rest } from 'msw';
 import { server } from '../../../mock/server'
+// import { OrderDetailsProvider } from '../../../contexts/OrderDetails';
 
 // resetHandlers -  it is necessary to overwrite defalut handlers to simulat err 
 // use find (insed of get) - with async await
@@ -15,7 +17,8 @@ test('handles error for scoops and toppings routes', async () =>  {
         )
     );
 
-    render(<OrderEntry />);
+    // render(<OrderEntry />,{ wrapper: OrderDetailsProvider });
+    render(<OrderEntry /> );
     // waitFor https://testing-library.com/docs/guide-disappearance/
     await waitFor( async() => {
         const alerts = await screen.findAllByRole('alert' );
